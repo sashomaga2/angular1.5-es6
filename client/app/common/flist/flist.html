@@ -1,4 +1,5 @@
 <section class="f-list">
-    <h1>This is the NG6 starter</h1>
-    <h3>You can find me inside {{ $ctrl.name }}.html</h3>
+    <div ng-repeat="item in $ctrl.items">
+        <div>{{item.author}}</div>
+    </div>
 </section>

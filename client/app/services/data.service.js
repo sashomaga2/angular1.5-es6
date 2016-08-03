@@ -13,8 +13,12 @@ class FlickDataService
     }
 
     getData(){
-        return 'Moia hui si e moi!';
-        //return HTTP.get(this).get('/api/activeBooks').then(result => result.data );
+
+        //return HTTP.get(this).get('https://api.flickr.com/services/feeds/photos_public.gne?format=json').then(result => { result.data; debugger; } );
+        //return HTTP.jsonp(this).get('https://api.flickr.com/services/feeds/photos_public.gne?format=json').then(result => { result.data; debugger; } );
+        return HTTP.get(this).jsonp('https://api.flickr.com/services/feeds/photos_public.gne?format=json&&jsoncallback=JSON_CALLBACK')
+            .then(function(result) { console.log('result', result); return result.data.items});
+            //.then(result => result.data.items);
     }
 
     static dataFactory($http){
