@@ -1,12 +1,12 @@
 import template from './flist.html';
 import controller from './flist.controller';
-import './hero.styl';
+import './flist.styl';
 
-let heroComponent = {
+let fListComponent = {
     restrict: 'E',
     bindings: {},
     template,
     controller
 };
 
-export default heroComponent;
+export default fListComponent;

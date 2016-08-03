@@ -1,5 +1,6 @@
 class FListController {
-    constructor() {
+    constructor(flickDataService) {
+        console.log('inside constructor', flickDataService);
         this.name = 'hero';
     }
 }
