@@ -13,12 +13,9 @@ class FlickDataService
     }
 
     getData(){
-
-        //return HTTP.get(this).get('https://api.flickr.com/services/feeds/photos_public.gne?format=json').then(result => { result.data; debugger; } );
-        //return HTTP.jsonp(this).get('https://api.flickr.com/services/feeds/photos_public.gne?format=json').then(result => { result.data; debugger; } );
         return HTTP.get(this).jsonp('https://api.flickr.com/services/feeds/photos_public.gne?format=json&&jsoncallback=JSON_CALLBACK')
-            .then(function(result) { console.log('result', result); return result.data.items});
-            //.then(result => result.data.items);
+            .then(function(result) { return result.data.items})
+            .catch(function(err){ console.error(err); });
     }
 
     static dataFactory($http){
