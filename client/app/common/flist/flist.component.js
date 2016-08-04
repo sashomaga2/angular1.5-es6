@@ -4,7 +4,7 @@ import './flist.styl';
 
 let fListComponent = {
     restrict: 'E',
-    bindings: {},
+    bindings: {items: '<'},
     template,
     controller
 };
