@@ -1,5 +1,5 @@
 <section class="f-list">
-    <div ng-repeat="item in $ctrl.items">
+    <div ng-repeat="item in $ctrl.items track by $index">
         <div>{{item.author}}</div>
     </div>
 </section>

@@ -1,9 +1,9 @@
 class FListController {
     constructor(flickDataService) {
-        flickDataService.getData().then(result => {
-           this.items = result.data.items;
-           console.log('items', this.items);
-        });
+        // flickDataService.getData().then(result => {
+        //    this.items = result.data.items;
+        //    console.log('items', this.items);
+        // });
     }
 }
 
