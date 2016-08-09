@@ -1,5 +1,13 @@
 <section class="f-list">
-    <div ng-repeat="item in $ctrl.items track by $index">
-        <div>{{item.author}}</div>
-    </div>
+    <div class="list-group">
+        <h5 class="list-group-item-heading">Flickr Photo Steam</h5>
+        <div class="list-group-item" ng-repeat="item in $ctrl.items">
+            <img alt="item.title" class="img-responsive" src="{{item.media.m}}">
+            <a href="{{item.link}}">{{item.title}}</a>
+            by
+            <a href="{{item.author.split(' ')[0]}}">{{item.author.split(' ')[1]}}</a>
+            <div ng-bind-html="$ctrl.convert(item.description)"></div>
+            <div>Tags: {{item.tags}}</div>
+            <div id="$ctrl.test(item)">{{ $ctrl.test(item); }}</div>
+        </div>
 </section>
